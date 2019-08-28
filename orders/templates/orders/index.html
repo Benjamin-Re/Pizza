@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Pizzas</title>
+</head>
+<body>
+    <h1>Our Pizzas</h1>
+    <ul>
+        {% for pizza in pizzas %}
+            <li>
+                {{ pizza }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Application definition. Include new apps here!
 
 INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
