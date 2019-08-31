@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Our Pizzas</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
     <h1>Our Pizzas</h1>
     <ul>
         {% for pizza in pizzas %}
             <li>
-                {{ pizza }}
+                <!-- to make pizza clickable just add route name plus id variable -->
+                <!-- every pizza has an id without me specifying it in the model.
+                I guess this is provided by Django -->
+                <a href="{% url 'pizza' pizza.id%}">{{ pizza }}</a>
             </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">login</a>
+    <p>or</p>
+    <a href="{% url 'signup' %}">signup</a>
+{% endif %}
+{% endblock %}

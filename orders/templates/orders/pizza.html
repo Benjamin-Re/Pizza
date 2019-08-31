@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block title %}Pizza{% endblock %}
+
+{% block content %}
+    <h1>Chosen Pizza: </h1>{{ pizza }}
+    <br>
+    <a href="{% url 'index' %}">Go back to full listing of pizzas</a>
+
+{% endblock %}

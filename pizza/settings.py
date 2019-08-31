@@ -31,9 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition. Include new apps here!
 
 INSTALLED_APPS = [
-    'orders.apps.OrdersConfig',
+    'orders.apps.OrdersConfig', # my pizza app
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth', # authentication app for user login
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -55,7 +55,8 @@ ROOT_URLCONF = 'pizza.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # Let django know to look for a templates folder at project directory level
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# Once user logged in he will be redirected to this page/route
+LOGIN_REDIRECT_URL = '/'
+# And logout redirect
+LOGOUT_REDIRECT_URL = '/'
