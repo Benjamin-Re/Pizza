@@ -6,5 +6,19 @@
     <h1>Chosen Pizza: </h1>{{ pizza }}
     <br>
     <a href="{% url 'index' %}">Go back to full listing of pizzas</a>
-
+	
+	<form action="{% url 'addToCart' pizza.id%}" method="POST">
+	{% csrf_token %}
+	  <input type="submit" class="btn" value="Add to Cart" name="Add">
+	</form>
+	<h2>Toppings: </h2>
+	{% for topping in toppings %}
+		<li>
+			<form action="{% url 'addToPizza' pizza.id topping.id%}" method="POST">
+			{% csrf_token %}
+				<input type="submit" class="btn" value="Add to Pizza" name="Add">
+				{{ topping }}
+			</form>
+		</li>
+	{% endfor %}
 {% endblock %}

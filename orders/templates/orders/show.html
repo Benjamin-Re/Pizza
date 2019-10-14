@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block title %}Shopping Cart{% endblock %}
+
+{% block content %}
+    <h1>Pizzas: </h1>
+    {% for pizza in shoppingCart %}
+		<li> {{ pizza }} </li>
+	{% endfor %}
+ {% endblock %}

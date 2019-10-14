@@ -124,3 +124,5 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 # And logout redirect
 LOGOUT_REDIRECT_URL = '/'
+# if i want to customize Djangos user model
+# AUTH_USER_MODEL = 'users.CustomUser'

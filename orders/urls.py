@@ -9,4 +9,7 @@ urlpatterns = [
     path('signup/', views.SignUp.as_view(), name='signup'),
     # make available access to individual pizza by introducing id variable
     path("<int:pizza_id>", views.pizza, name="pizza"),
+	path("addToCart(<int:pizza_id>)", views.addToCart, name="addToCart"),
+	path("addToPizza(<int:pizza_id>, <int:topping_id>)", views.addToPizza, name="addToPizza"),
+	path("showCart(<int:cart_id>", views.show, name="show")
 ]
