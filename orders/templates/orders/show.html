@@ -3,8 +3,15 @@
 {% block title %}Shopping Cart{% endblock %}
 
 {% block content %}
-    <h1>Pizzas: </h1>
-    {% for pizza in shoppingCart %}
-		<li> {{ pizza }} </li>
+    <h1>My Shopping Cart: </h1>
+    <p>you have added the following items:</p>
+	<p>(click to delete from ShoppingCart)</p>
+	{% for item in items %}
+		<a href="{% url 'delete' item.id %}">
+			<li>{{ item }}</li>
+			<li>{{ item.price }}€</li>
+		</a>
 	{% endfor %}
- {% endblock %}
+	<p>Total: {{ sum }}€</p>
+	<a href="{% url 'index' %}">Go back</a>
+{% endblock %}

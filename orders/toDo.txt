@@ -1,0 +1,6 @@
+#ToDo:
+- buy one pizza multiple times
+- pizza size
+- topping prices
+- stay on the same page when adding topping or pizza to cart (dont go back to index everytime).
+- 

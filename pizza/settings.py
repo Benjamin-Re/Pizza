@@ -120,6 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+ORD_DIR = os.path.join(BASE_DIR, "static", "orders/static")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    ORD_DIR,
+]
 # Once user logged in he will be redirected to this page/route
 LOGIN_REDIRECT_URL = '/'
 # And logout redirect

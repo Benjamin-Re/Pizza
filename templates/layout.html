@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head>  
   <meta charset="utf-8">
   <title>{% block title %}Pizza Store{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static '/style.css' %}" />
+  <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet">
 </head>
 <body>
   <main>
-    {% block content %}
-    {% endblock %}
+    <div class="page">
+		<div class="header">
+			{% load static %}
+			<img src="{% static '/pizzaT.png' %}" alt="My image"/>
+			
+		</div>
+        <div class="content">
+			<p>This is the content</p>
+			{% block content %}
+			{% endblock %}
+		</div>
+		<div class="footer">
+			<p>Benjamin Renker <br>
+			Pizza Corp. <br>
+			buymypizza@gmail.com <br> 
+			Phon. 225123321</p>
+		</div>
+	</div>
   </main>
 </body>
 </html>
+
+
+			
+			

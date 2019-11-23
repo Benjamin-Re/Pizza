@@ -1,0 +1,64 @@
+html {
+  background-color: lightblue;
+  background-image: url("Colosseum.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  
+  font-size: 2vw;
+  font-family: 'Calistoga', cursive;
+}
+
+.page {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-rows: 25% 25% 25% 25%;
+	grid-template-areas: 
+		"head cont cont foot"
+		"head cont cont foot"
+		"head cont cont foot"		
+		"head cont cont foot"
+}
+
+.header {
+	background-color: rgba(0, 255, 0, 0.5);
+	grid-area: head;
+}
+
+.content {
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.5);
+	grid-area: cont;
+}
+
+.footer {
+	padding: 20px;
+	background: rgba(255, 0, 0, 0.5);
+	grid-area: foot;
+}
+
+li {
+	list-style-type: none;
+	
+}
+
+li:nth-child(even) {
+	font-style: oblique;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-shadow: 3px 2px red;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	margin-top: 20px;
+	filter: saturate(200%);
+}

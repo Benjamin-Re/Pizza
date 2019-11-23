@@ -5,6 +5,14 @@
 {% block content %}
     <h1>Chosen Pizza: </h1>{{ pizza }}
     <br>
+	{% for topping in activeToppings %}
+		<a href="{% url 'deleteTopping' pizza.id topping.id %}">
+			<li>{{ topping }}</li>
+		</a>
+	{% endfor %}
+	
+	
+	
     <a href="{% url 'index' %}">Go back to full listing of pizzas</a>
 	
 	<form action="{% url 'addToCart' pizza.id%}" method="POST">
